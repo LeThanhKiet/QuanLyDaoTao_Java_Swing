@@ -158,7 +158,7 @@ public class frmDoiMatKhau extends javax.swing.JFrame {
     }//GEN-LAST:event_btnThayDoiKeyReleased
     
     private void changePassWord() {
-                String pass1 = txtMatKhauCu.getText();
+        String pass1 = txtMatKhauCu.getText();
         String pass2 = txtMatKhauMoi.getText();
         String pass3 = txtNhapLaiMatKhau.getText();
         

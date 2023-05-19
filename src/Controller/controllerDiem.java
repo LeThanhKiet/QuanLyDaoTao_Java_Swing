@@ -107,6 +107,33 @@ public class controllerDiem {
         }
     }
     
+    public List<Diem> searchData(String maSV){
+        String query = "select * from tblDiem where MaSV = ?";
+        List<Diem> diem = new ArrayList<Diem>();
+        try {
+            Connection conn = new DBConnect().connect();
+            PreparedStatement prSt = conn.prepareStatement(query);
+            prSt.setString(1, maSV);
+            ResultSet rs = prSt.executeQuery();
+            while(rs.next()) {
+                Diem obj = new Diem();
+                
+                obj.setMaSV(rs.getString("MaSV"));
+                obj.setMaLopHocPhan(rs.getString("MaLopHocPhan"));
+                obj.setDiemTP(rs.getDouble("DiemTP"));
+                obj.setDiemCK(rs.getDouble("DiemCK"));
+                obj.setDiemTK(rs.getDouble("DiemTK"));
+                obj.setXepLoai(rs.getString("XepLoai"));
+                
+                diem.add(obj);
+            }
+            prSt.close();
+            conn.close();
+        } catch (Exception e) {
+            System.out.println("Error: " + e.toString());
+        }
+        return diem;
+    }
     
     public ResultSet getDiem(String maSV){
         ResultSet diem = null;
