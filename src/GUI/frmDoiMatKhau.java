@@ -4,6 +4,7 @@
  */
 package GUI;
 import Controller.controllerNguoiDung;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -19,6 +20,7 @@ public class frmDoiMatKhau extends javax.swing.JFrame {
     public frmDoiMatKhau() {
         initComponents();
         this.setTitle("Đổi mật khẩu");
+        this.setIconImage(new ImageIcon(getClass().getResource("/Icon/EPUlogo.png")).getImage());
         this.setLocationRelativeTo(null);
     }
 

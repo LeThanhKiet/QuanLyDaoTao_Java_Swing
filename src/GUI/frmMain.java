@@ -4,11 +4,12 @@
  */
 package GUI;
 
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
  *
- * @author LETHANHKIET
+ * @author Le Thanh Kiet
  */
 public class frmMain extends javax.swing.JFrame {
 
@@ -18,6 +19,7 @@ public class frmMain extends javax.swing.JFrame {
     public frmMain() {
         initComponents();
         this.setTitle("Hệ thống quản lý đào tạo - EPU");
+        this.setIconImage(new ImageIcon(getClass().getResource("/Icon/EPUlogo.png")).getImage());
         this.setLocationRelativeTo(null);
     }
 

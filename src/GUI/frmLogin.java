@@ -4,6 +4,7 @@
  */
 package GUI;
 import Controller.controllerNguoiDung;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -20,6 +21,7 @@ public class frmLogin extends javax.swing.JFrame {
     public frmLogin() {
         initComponents();
         this.setTitle("Đăng nhập");
+        this.setIconImage(new ImageIcon(getClass().getResource("/Icon/EPUlogo.png")).getImage());
         this.setLocationRelativeTo(null);
     }
 

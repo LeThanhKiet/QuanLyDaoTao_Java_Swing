@@ -15,6 +15,7 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.Timer;
@@ -35,6 +36,7 @@ public class frmMainSV extends javax.swing.JFrame {
     public frmMainSV() {
         initComponents();
         this.setTitle("Cổng thông tin sinh viên EPU");
+        this.setIconImage(new ImageIcon(getClass().getResource("/Icon/EPUlogo.png")).getImage());
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         this.setUser();
         

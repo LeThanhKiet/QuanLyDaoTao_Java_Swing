@@ -10,6 +10,7 @@ import java.text.DateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.Timer;
@@ -33,6 +34,7 @@ public class frmMainAdmin extends javax.swing.JFrame {
     public frmMainAdmin() {
         initComponents();
         this.setTitle("Hệ thống quản lí đào tạo EPU");
+        this.setIconImage(new ImageIcon(getClass().getResource("/Icon/EPUlogo.png")).getImage());
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         this.setUser();
         
