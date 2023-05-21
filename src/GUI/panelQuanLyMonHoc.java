@@ -365,7 +365,6 @@ public class panelQuanLyMonHoc extends javax.swing.JPanel {
         });
 
         btnSua.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnSua.setForeground(new java.awt.Color(0, 0, 0));
         btnSua.setText("Sửa");
         btnSua.setEnabled(false);
         btnSua.addActionListener(new java.awt.event.ActionListener() {
@@ -375,7 +374,6 @@ public class panelQuanLyMonHoc extends javax.swing.JPanel {
         });
 
         btnXoa.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnXoa.setForeground(new java.awt.Color(0, 0, 0));
         btnXoa.setText("Xóa");
         btnXoa.setEnabled(false);
         btnXoa.setIconTextGap(2);
@@ -515,22 +513,26 @@ public class panelQuanLyMonHoc extends javax.swing.JPanel {
 
     private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
         // TODO add your handling code here:
-        String maMH = txtMaMH.getText();
-        String tenMH = txtTenMH.getText();
-        List<ChuyenNganh> listLop = ctlChuyenNganh.getChuyenNganh();
-        String maChuyenNganh = listLop.get(cmbChuyenNganh.getSelectedIndex()).getMaChuyenNganh();
-        String hocKy = txtHocKy.getText();
-        int soTinChi = Integer.parseInt(txtSoTinChi.getText());
-        int soTiet = Integer.parseInt(txtSoTiet.getText());
-        String hinhThucThi = cmbHinhThucThi.getSelectedItem().toString();
-        
-        MonHoc monHoc = new MonHoc(maMH, tenMH, maChuyenNganh, hocKy, soTinChi, soTiet, hinhThucThi);
-        boolean check = ctlMonHoc.insertData(monHoc);
-        if(check) {
-        JOptionPane.showMessageDialog(null, "Thêm môn học thành công", "Thông báo", 1);
-        btnLamMoi.doClick();
+        if(txtMaMH.getText().equals("") || txtTenMH.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Mã môn học và tên môn học không được trống", "Thông báo", 1);
         } else {
-            JOptionPane.showMessageDialog(null, "Thêm thất bại \nVui lòng kiểm tra lại thông tin", "Thông báo", 1);
+            String maMH = txtMaMH.getText();
+            String tenMH = txtTenMH.getText();
+            List<ChuyenNganh> listLop = ctlChuyenNganh.getChuyenNganh();
+            String maChuyenNganh = listLop.get(cmbChuyenNganh.getSelectedIndex()).getMaChuyenNganh();
+            String hocKy = txtHocKy.getText();
+            int soTinChi = Integer.parseInt(txtSoTinChi.getText());
+            int soTiet = Integer.parseInt(txtSoTiet.getText());
+            String hinhThucThi = cmbHinhThucThi.getSelectedItem().toString();
+
+            MonHoc monHoc = new MonHoc(maMH, tenMH, maChuyenNganh, hocKy, soTinChi, soTiet, hinhThucThi);
+            boolean check = ctlMonHoc.insertData(monHoc);
+            if(check) {
+            JOptionPane.showMessageDialog(null, "Thêm môn học thành công", "Thông báo", 1);
+            btnLamMoi.doClick();
+            } else {
+                JOptionPane.showMessageDialog(null, "Thêm thất bại \nVui lòng kiểm tra lại thông tin", "Thông báo", 1);
+            }
         }
     }//GEN-LAST:event_btnThemActionPerformed
 

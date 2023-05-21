@@ -306,7 +306,6 @@ public class panelQuanLyGiangVien extends javax.swing.JPanel {
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
 
         btnSua.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnSua.setForeground(new java.awt.Color(0, 0, 0));
         btnSua.setText("Sửa");
         btnSua.setEnabled(false);
         btnSua.addActionListener(new java.awt.event.ActionListener() {
@@ -325,7 +324,6 @@ public class panelQuanLyGiangVien extends javax.swing.JPanel {
         });
 
         btnXoa.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnXoa.setForeground(new java.awt.Color(0, 0, 0));
         btnXoa.setText("Xóa");
         btnXoa.setEnabled(false);
         btnXoa.setIconTextGap(2);
@@ -506,44 +504,48 @@ public class panelQuanLyGiangVien extends javax.swing.JPanel {
 
     private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
         // TODO add your handling code here:
-        String maGV = txtMaGV.getText();
-        String tenGV = txtTenGV.getText();
-        
-        List<ChuyenNganh> listCN = new controllerChuyenNganh().getChuyenNganh();
-        String maChuyenNganh = listCN.get(cboMaCN.getSelectedIndex()).getMaChuyenNganh();
-        String ngaySinh = txtNgaySinh.getText();
-        SimpleDateFormat format = new SimpleDateFormat("MM-dd-yyyy");
-        Date date = null;
-        try {
-            date = format.parse(ngaySinh);
-        } catch (ParseException ex) {
-            Logger.getLogger(panelQuanLyGiangVien.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        java.sql.Date NgaySinh = new java.sql.Date(date.getTime());
+        if(txtMaGV.getText().equals("") || txtTenGV.getText().equals("")) {
+            JOptionPane.showConfirmDialog(null, "Mã giảng viên và tên giảng viên không được để trống", "Thông báo", 1);
+        } else {
+            String maGV = txtMaGV.getText();
+            String tenGV = txtTenGV.getText();
 
-        String gioiTinh;
-        if(rdNam.isSelected()) {
-            gioiTinh = "Nam";
-        } else if (rdNu.isSelected()) {
-            gioiTinh = "Nu";
-        } else {
-            gioiTinh = "";
+            List<ChuyenNganh> listCN = new controllerChuyenNganh().getChuyenNganh();
+            String maChuyenNganh = listCN.get(cboMaCN.getSelectedIndex()).getMaChuyenNganh();
+            String ngaySinh = txtNgaySinh.getText();
+            SimpleDateFormat format = new SimpleDateFormat("MM-dd-yyyy");
+            Date date = null;
+            try {
+                date = format.parse(ngaySinh);
+            } catch (ParseException ex) {
+                Logger.getLogger(panelQuanLyGiangVien.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            java.sql.Date NgaySinh = new java.sql.Date(date.getTime());
+
+            String gioiTinh;
+            if(rdNam.isSelected()) {
+                gioiTinh = "Nam";
+            } else if (rdNu.isSelected()) {
+                gioiTinh = "Nu";
+            } else {
+                gioiTinh = "";
+            }
+
+            String Email = txtEmail.getText();
+            String diaChi = txtDiaChi.getText();
+            String SDT = txtSDT.getText();
+
+            GiangVien gv = new GiangVien(maGV, tenGV, maChuyenNganh, NgaySinh, gioiTinh, Email, diaChi, SDT);
+
+            boolean check = ctlGV.insertData(gv);
+            if(check) {            
+                JOptionPane.showMessageDialog(null, "Thêm thành công giảng viên \nThêm tài khoản đăng nhập cho giảng viên thành công với tài khoản và mật khẩu là mã giảng viên", "Thông báo", 1);
+                ctlNguoiDung.insertData(maGV, maGV);
+                btnLamMoi.doClick();
+            } else {
+                JOptionPane.showMessageDialog(null, "Thêm giảng viên thất bại", "Thông báo", 1);
+            } 
         }
-        
-        String Email = txtEmail.getText();
-        String diaChi = txtDiaChi.getText();
-        String SDT = txtSDT.getText();
-        
-        GiangVien gv = new GiangVien(maGV, tenGV, maChuyenNganh, NgaySinh, gioiTinh, Email, diaChi, SDT);
-        
-        boolean check = ctlGV.insertData(gv);
-        if(check) {            
-            JOptionPane.showMessageDialog(null, "Thêm thành công giảng viên \nThêm tài khoản đăng nhập cho giảng viên thành công với tài khoản và mật khẩu là mã giảng viên", "Thông báo", 1);
-            ctlNguoiDung.insertData(maGV, maGV);
-            btnLamMoi.doClick();
-        } else {
-            JOptionPane.showMessageDialog(null, "Thêm giảng viên thất bại", "Thông báo", 1);
-        } 
     }//GEN-LAST:event_btnThemActionPerformed
 
     private void btnXoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoaActionPerformed

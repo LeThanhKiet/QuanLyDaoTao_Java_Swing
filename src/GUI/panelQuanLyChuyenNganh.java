@@ -200,7 +200,6 @@ public class panelQuanLyChuyenNganh extends javax.swing.JPanel {
         jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
 
         btnSua.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnSua.setForeground(new java.awt.Color(0, 0, 0));
         btnSua.setText("Sửa");
         btnSua.setEnabled(false);
         btnSua.addActionListener(new java.awt.event.ActionListener() {
@@ -210,7 +209,6 @@ public class panelQuanLyChuyenNganh extends javax.swing.JPanel {
         });
 
         btnXoa.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnXoa.setForeground(new java.awt.Color(0, 0, 0));
         btnXoa.setText("Xóa");
         btnXoa.setEnabled(false);
         btnXoa.setIconTextGap(2);
@@ -402,22 +400,25 @@ public class panelQuanLyChuyenNganh extends javax.swing.JPanel {
 
     private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
         // TODO add your handling code here:
-        String maCN = txtMaCN.getText();
-        String tenCN = txtTenCN.getText();
-        
-        List<Khoa> listKhoa = new controllerKhoa().getKhoa();
-        String maKhoa = listKhoa.get(cboKhoa.getSelectedIndex()).getMaKhoa();
-        
-        ChuyenNganh cn = new ChuyenNganh(maCN, tenCN, maKhoa);
-        
-        boolean check = ctlCN.insertData(cn);
-        if(check) {
-            JOptionPane.showMessageDialog(null, "Thêm chuyên ngành thành công", "Thông báo", 1);
-            btnLamMoi.doClick();
+        if(txtMaCN.getText().equals("") || txtTenCN.getText().equals("")) {
+            JOptionPane.showConfirmDialog(null, "Mã chuyên ngành và tên chuyên ngành không được trống!!!", "Thông báo", 1);
         } else {
-            JOptionPane.showMessageDialog(null, "Thêm chuyên ngành thất bại \n Vui lòng kiểm tra lại thông tin", "Thông báo", 1);
-        }
-        
+            String maCN = txtMaCN.getText();
+            String tenCN = txtTenCN.getText();
+
+            List<Khoa> listKhoa = new controllerKhoa().getKhoa();
+            String maKhoa = listKhoa.get(cboKhoa.getSelectedIndex()).getMaKhoa();
+
+            ChuyenNganh cn = new ChuyenNganh(maCN, tenCN, maKhoa);
+
+            boolean check = ctlCN.insertData(cn);
+            if(check) {
+                JOptionPane.showMessageDialog(null, "Thêm chuyên ngành thành công", "Thông báo", 1);
+                btnLamMoi.doClick();
+            } else {
+                JOptionPane.showMessageDialog(null, "Thêm chuyên ngành thất bại \n Vui lòng kiểm tra lại thông tin", "Thông báo", 1);
+            }
+        }  
     }//GEN-LAST:event_btnThemActionPerformed
 
     private void btnLamMoiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLamMoiActionPerformed

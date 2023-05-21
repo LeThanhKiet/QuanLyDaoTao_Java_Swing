@@ -467,23 +467,27 @@ public class panelQuanLyLop extends javax.swing.JPanel {
 
     private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
         // TODO add your handling code here:
-        String maLop = txtMaLop.getText();
-        String tenLop = txtTenLop.getText();
-        
-        List<ChuyenNganh> listChuyenNganh = new controllerChuyenNganh().getChuyenNganh();
-        String maChuyenNganh = listChuyenNganh.get(cmbChuyenNganh.getSelectedIndex()).getMaChuyenNganh();
-        
-        long siSo = Long.parseLong(txtSiSo.getText());
-        String khoaHoc = txtKhoaHoc.getText();
-        
-        Lop l = new Lop(maLop, tenLop, maChuyenNganh, siSo, khoaHoc);
-        
-        boolean check = ctlLop.insertData(l);
-        if(check) {
-            JOptionPane.showMessageDialog(null, "Thêm chuyên ngành thành công", "Thông báo", 1);
-            btnLamMoi.doClick();
+        if(txtMaLop.getText().equals("") || txtTenLop.equals("")) {
+            JOptionPane.showConfirmDialog(null, "Mã lớp và tên lớp không được trống", "Thông báo", 1);
         } else {
-            JOptionPane.showMessageDialog(null, "Thêm thất bại \nVui lòng kiểm tra lại thông tin", "Thông báo", 1);
+            String maLop = txtMaLop.getText();
+            String tenLop = txtTenLop.getText();
+
+            List<ChuyenNganh> listChuyenNganh = new controllerChuyenNganh().getChuyenNganh();
+            String maChuyenNganh = listChuyenNganh.get(cmbChuyenNganh.getSelectedIndex()).getMaChuyenNganh();
+
+            long siSo = Long.parseLong(txtSiSo.getText());
+            String khoaHoc = txtKhoaHoc.getText();
+
+            Lop l = new Lop(maLop, tenLop, maChuyenNganh, siSo, khoaHoc);
+
+            boolean check = ctlLop.insertData(l);
+            if(check) {
+                JOptionPane.showMessageDialog(null, "Thêm chuyên ngành thành công", "Thông báo", 1);
+                btnLamMoi.doClick();
+            } else {
+                JOptionPane.showMessageDialog(null, "Thêm thất bại \nVui lòng kiểm tra lại thông tin", "Thông báo", 1);
+            }
         }
     }//GEN-LAST:event_btnThemActionPerformed
 

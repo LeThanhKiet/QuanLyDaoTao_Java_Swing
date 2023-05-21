@@ -96,14 +96,14 @@ public class panelQuanLyLopHP extends javax.swing.JPanel {
     }
     
     private void setNull(){
-        txtMaLop.setText("");
+        txtMaLopHocPhan.setText("");
         txtSiSo.setText("");
         txtHocKy.setText("");
         txtKhoaHoc.setText("");
         cmbChuyenNganh.setSelectedIndex(0);
         cmbMaGV.setSelectedIndex(0);
         cmbMaMH.setSelectedIndex(0);
-        txtMaLop.requestFocus();
+        txtMaLopHocPhan.requestFocus();
         txtTimKiem.setText("");
     }
     
@@ -128,7 +128,7 @@ public class panelQuanLyLopHP extends javax.swing.JPanel {
         jPanel3 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         txtHocKy = new javax.swing.JTextField();
-        txtMaLop = new javax.swing.JTextField();
+        txtMaLopHocPhan = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -166,7 +166,7 @@ public class panelQuanLyLopHP extends javax.swing.JPanel {
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
         jPanel2.setPreferredSize(new java.awt.Dimension(1082, 560));
 
-        txtMaLop.setName(""); // NOI18N
+        txtMaLopHocPhan.setName(""); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel2.setText("Mã Lớp Học Phần");
@@ -202,7 +202,7 @@ public class panelQuanLyLopHP extends javax.swing.JPanel {
                         .addComponent(jLabel9)))
                 .addGap(19, 19, 19)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtMaLop, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtMaLopHocPhan, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cmbMaGV, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(46, 46, 46)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -245,7 +245,7 @@ public class panelQuanLyLopHP extends javax.swing.JPanel {
                         .addGap(17, 17, 17))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtMaLop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtMaLopHocPhan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(cmbChuyenNganh, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel5)
                             .addComponent(cmbMaMH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -422,11 +422,10 @@ public class panelQuanLyLopHP extends javax.swing.JPanel {
                                 .addGap(18, 18, 18)
                                 .addComponent(txtTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(btnTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(btnTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addContainerGap()
-                                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 1105, Short.MAX_VALUE)))
+                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 1099, Short.MAX_VALUE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
@@ -496,7 +495,7 @@ public class panelQuanLyLopHP extends javax.swing.JPanel {
         // TODO add your handling code here:
         int r = tblLopHP.getSelectedRow();
         if(r >= 0) {
-            txtMaLop.setText(tblLopHP.getValueAt(r, 0).toString());
+            txtMaLopHocPhan.setText(tblLopHP.getValueAt(r, 0).toString());
             cmbMaMH.setSelectedItem(new Controller.controllerMonHoc().TenMonHocTheoMa(tblLopHP.getValueAt(r, 1).toString()));
             cmbChuyenNganh.setSelectedItem(new Controller.controllerChuyenNganh().TenChuyenNganhTheoMa(tblLopHP.getValueAt(r, 2).toString()));
             cmbMaGV.setSelectedItem(new Controller.controllerGiangVien().TenGiangVienTheoMa(tblLopHP.getValueAt(r, 3).toString()));  
@@ -504,37 +503,41 @@ public class panelQuanLyLopHP extends javax.swing.JPanel {
             txtHocKy.setText(tblLopHP.getValueAt(r, 5).toString());
             txtKhoaHoc.setText(tblLopHP.getValueAt(r, 6).toString());
             
-            txtMaLop.setEnabled(false);
+            txtMaLopHocPhan.setEnabled(false);
             setButton(false);
         }
     }//GEN-LAST:event_tblLopHPMouseClicked
 
     private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
         // TODO add your handling code here:
-        String maLopHocPhan = txtMaLop.getText();
-        List<MonHoc> listMonHoc = new Controller.controllerMonHoc().getMonHoc();
-        String maMH = listMonHoc.get(cmbMaMH.getSelectedIndex()).getMaMH();
-        List<ChuyenNganh> listCN = new Controller.controllerChuyenNganh().getChuyenNganh();
-        String maChuyenNganh = listCN.get(cmbChuyenNganh.getSelectedIndex()).getMaChuyenNganh();
-        List<GiangVien> listGiangVien = new Controller.controllerGiangVien().getGiangVien();
-        String maGV = listGiangVien.get(cmbMaGV.getSelectedIndex()).getMaGV();
-        int siSo = Integer.parseInt(txtSiSo.getText());
-        int hocKy = Integer.parseInt(txtHocKy.getText());
-        String namHoc = txtKhoaHoc.getText();
-        
-        LopHocPhan lopHocPhan = new LopHocPhan(maLopHocPhan, maMH, maChuyenNganh, maGV, siSo, hocKy, namHoc);
-        boolean check = ctlLopHP.insertData(lopHocPhan);
-        if(check) {
-        JOptionPane.showMessageDialog(null, "Thêm lớp học phần thành công", "Thông báo", 1);
-        btnLamMoi.doClick();
+        if(txtMaLopHocPhan.getText().equals("")) {
+            JOptionPane.showConfirmDialog(null, "Mã lớp học phần không được để trống", "Thông báo", 1);
         } else {
-            JOptionPane.showMessageDialog(null, "Thêm thất bại \nVui lòng kiểm tra lại thông tin", "Thông báo", 1);
+            String maLopHocPhan = txtMaLopHocPhan.getText();
+            List<MonHoc> listMonHoc = new Controller.controllerMonHoc().getMonHoc();
+            String maMH = listMonHoc.get(cmbMaMH.getSelectedIndex()).getMaMH();
+            List<ChuyenNganh> listCN = new Controller.controllerChuyenNganh().getChuyenNganh();
+            String maChuyenNganh = listCN.get(cmbChuyenNganh.getSelectedIndex()).getMaChuyenNganh();
+            List<GiangVien> listGiangVien = new Controller.controllerGiangVien().getGiangVien();
+            String maGV = listGiangVien.get(cmbMaGV.getSelectedIndex()).getMaGV();
+            int siSo = Integer.parseInt(txtSiSo.getText());
+            int hocKy = Integer.parseInt(txtHocKy.getText());
+            String namHoc = txtKhoaHoc.getText();
+
+            LopHocPhan lopHocPhan = new LopHocPhan(maLopHocPhan, maMH, maChuyenNganh, maGV, siSo, hocKy, namHoc);
+            boolean check = ctlLopHP.insertData(lopHocPhan);
+            if(check) {
+            JOptionPane.showMessageDialog(null, "Thêm lớp học phần thành công", "Thông báo", 1);
+            btnLamMoi.doClick();
+            } else {
+                JOptionPane.showMessageDialog(null, "Thêm thất bại \nVui lòng kiểm tra lại thông tin", "Thông báo", 1);
+            }
         }
     }//GEN-LAST:event_btnThemActionPerformed
 
     private void btnSuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaActionPerformed
         // TODO add your handling code here:
-        String maLopHocPhan = txtMaLop.getText();
+        String maLopHocPhan = txtMaLopHocPhan.getText();
         List<MonHoc> listMonHoc = new Controller.controllerMonHoc().getMonHoc();
         String maMH = listMonHoc.get(cmbMaMH.getSelectedIndex()).getMaMH();
         List<ChuyenNganh> listCN = new Controller.controllerChuyenNganh().getChuyenNganh();
@@ -559,7 +562,7 @@ public class panelQuanLyLopHP extends javax.swing.JPanel {
         // TODO add your handling code here:
         int reply = JOptionPane.showConfirmDialog(null, "Bạn có chắc muốn xoá lớp học phần này", "Thông báo", JOptionPane.YES_NO_OPTION);
         if(reply == JOptionPane.YES_OPTION) {
-            boolean check = ctlLopHP.deleteData(txtMaLop.getText());
+            boolean check = ctlLopHP.deleteData(txtMaLopHocPhan.getText());
             if(check) {
                 JOptionPane.showMessageDialog(null, "Xóa thành công", "Thông báo", 1);
                 btnLamMoi.doClick();
@@ -575,7 +578,7 @@ public class panelQuanLyLopHP extends javax.swing.JPanel {
         getData();
         setNull();
         setButton(true);
-        txtMaLop.setEnabled(true);
+        txtMaLopHocPhan.setEnabled(true);
     }//GEN-LAST:event_btnLamMoiActionPerformed
 
     private void btnTimKiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTimKiemActionPerformed
@@ -595,7 +598,7 @@ public class panelQuanLyLopHP extends javax.swing.JPanel {
 
             tableModelLopHP.addRow(rows);
         }
-        txtMaLop.setEnabled(true);
+        txtMaLopHocPhan.setEnabled(true);
         setButton(true);
         setNull();
     }//GEN-LAST:event_btnTimKiemActionPerformed
@@ -629,7 +632,7 @@ public class panelQuanLyLopHP extends javax.swing.JPanel {
     private javax.swing.JTable tblLopHP;
     private javax.swing.JTextField txtHocKy;
     private javax.swing.JTextField txtKhoaHoc;
-    private javax.swing.JTextField txtMaLop;
+    private javax.swing.JTextField txtMaLopHocPhan;
     private javax.swing.JTextField txtSiSo;
     private javax.swing.JTextField txtTimKiem;
     // End of variables declaration//GEN-END:variables

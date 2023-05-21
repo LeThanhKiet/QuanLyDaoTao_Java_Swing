@@ -181,7 +181,7 @@
                               </Group>
                               <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="txtMaLop" min="-2" pref="150" max="-2" attributes="0"/>
+                                  <Component id="txtMaLopHocPhan" min="-2" pref="150" max="-2" attributes="0"/>
                                   <Component id="cmbMaGV" min="-2" pref="179" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="46" pref="46" max="-2" attributes="0"/>
@@ -233,7 +233,7 @@
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="txtMaLop" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="txtMaLopHocPhan" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="cmbChuyenNganh" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="cmbMaMH" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -257,7 +257,7 @@
                   <SubComponents>
                     <Component class="javax.swing.JTextField" name="txtHocKy">
                     </Component>
-                    <Component class="javax.swing.JTextField" name="txtMaLop">
+                    <Component class="javax.swing.JTextField" name="txtMaLopHocPhan">
                       <Properties>
                         <Property name="name" type="java.lang.String" value="" noResource="true"/>
                       </Properties>

@@ -306,7 +306,6 @@ public class panelQuanLySinhVien extends javax.swing.JPanel {
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
 
         btnSua.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnSua.setForeground(new java.awt.Color(0, 0, 0));
         btnSua.setText("Sửa");
         btnSua.setEnabled(false);
         btnSua.addActionListener(new java.awt.event.ActionListener() {
@@ -325,7 +324,6 @@ public class panelQuanLySinhVien extends javax.swing.JPanel {
         });
 
         btnXoa.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnXoa.setForeground(new java.awt.Color(0, 0, 0));
         btnXoa.setText("Xóa");
         btnXoa.setEnabled(false);
         btnXoa.setIconTextGap(2);
@@ -486,45 +484,48 @@ public class panelQuanLySinhVien extends javax.swing.JPanel {
     }//GEN-LAST:event_tblSinhVienMouseClicked
 
     private void btnSuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaActionPerformed
-        String maSV = txtMaSV.getText();
-        String tenSV = txtTenSV.getText();
-        
-        
-        String ngaySinh = txtNgaySinh.getText();
-        SimpleDateFormat format = new SimpleDateFormat("MM-dd-yyyy");
-        Date date = null;
-        try {
-            date = format.parse(ngaySinh);
-        } catch (Exception e) {
-            System.out.println("Error: " + e.toString());
-        }
-        java.sql.Date NgaySinh = new java.sql.Date(date.getTime());
-        
-        String gioiTinh;
-        if(rdNam.isSelected()) {
-            gioiTinh = "Nam";
+        if(txtMaSV.getText().equals("") || txtTenSV.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Mã sinh viên và tên sinh viên không được trống", "Thông báo", 1);
         } else {
-            gioiTinh = "Nữ";
-        }
-        String diaChi = txtDiaChi.getText();
-        String SDT = txtSDT.getText();
-        List<Lop> listLop = new controllerLop().getLop();
-        String maLop = listLop.get(cmbMaLH.getSelectedIndex()).getMaLop();
-        String heDaoTao = txtHeDaoTao.getText();
+            String maSV = txtMaSV.getText();
+            String tenSV = txtTenSV.getText();
 
-        SinhVien sv = new SinhVien(maSV, tenSV, NgaySinh, gioiTinh, diaChi, SDT, maLop, heDaoTao);
+            String ngaySinh = txtNgaySinh.getText();
+            SimpleDateFormat format = new SimpleDateFormat("MM-dd-yyyy");
+            Date date = null;
+            try {
+                date = format.parse(ngaySinh);
+            } catch (Exception e) {
+                System.out.println("Error: " + e.toString());
+            }
+            java.sql.Date NgaySinh = new java.sql.Date(date.getTime());
 
-        boolean check = ctlSinhVien.updateData(sv);
-        if(check) {
-            JOptionPane.showMessageDialog(null, "Sửa sinh viên thành công", "Thông báo", 1);
-            btnLamMoi.doClick();
-        } else {
-            JOptionPane.showMessageDialog(null, "Sửa thất bại \nVui lòng kiểm tra lại thông tin", "Thông báo", 1);
+            String gioiTinh;
+            if(rdNam.isSelected()) {
+                gioiTinh = "Nam";
+            } else {
+                gioiTinh = "Nữ";
+            }
+            String diaChi = txtDiaChi.getText();
+            String SDT = txtSDT.getText();
+            List<Lop> listLop = new controllerLop().getLop();
+            String maLop = listLop.get(cmbMaLH.getSelectedIndex()).getMaLop();
+            String heDaoTao = txtHeDaoTao.getText();
+
+            SinhVien sv = new SinhVien(maSV, tenSV, NgaySinh, gioiTinh, diaChi, SDT, maLop, heDaoTao);
+
+            boolean check = ctlSinhVien.updateData(sv);
+            if(check) {
+                JOptionPane.showMessageDialog(null, "Sửa sinh viên thành công", "Thông báo", 1);
+                btnLamMoi.doClick();
+            } else {
+                JOptionPane.showMessageDialog(null, "Sửa thất bại \nVui lòng kiểm tra lại thông tin", "Thông báo", 1);
+            }
         }
-        
     }//GEN-LAST:event_btnSuaActionPerformed
 
     private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
+        
         String maSV = txtMaSV.getText();
         String tenSV = txtTenSV.getText();
         
