@@ -90,6 +90,7 @@ public class panelQuanLySinhVien extends javax.swing.JPanel {
         txtSDT.setText("");
         txtHeDaoTao.setText("");
         txtMaSV.requestFocus();
+        txtTimKiem.setText("");
     }
     
     private void setButton(boolean a){
@@ -603,6 +604,9 @@ public class panelQuanLySinhVien extends javax.swing.JPanel {
 
             tableModelSinhVien.addRow(rows);
             }
+            txtMaSV.setEnabled(true);
+            setButton(true);
+            setNull();
         }
         else {
             JOptionPane.showMessageDialog(null, "Không tồn tại thông tin", "Thông báo", 1);

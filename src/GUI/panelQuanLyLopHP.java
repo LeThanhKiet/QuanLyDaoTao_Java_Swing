@@ -104,6 +104,7 @@ public class panelQuanLyLopHP extends javax.swing.JPanel {
         cmbMaGV.setSelectedIndex(0);
         cmbMaMH.setSelectedIndex(0);
         txtMaLop.requestFocus();
+        txtTimKiem.setText("");
     }
     
     private void setButton(boolean a){
@@ -581,19 +582,22 @@ public class panelQuanLyLopHP extends javax.swing.JPanel {
         // TODO add your handling code here:
         clearData();
         List<LopHocPhan> result = ctlLopHP.searchData(txtTimKiem.getText());
-            for(int i = 0; i < result.size(); i++) {
-                Object[] rows = new Object[7];
+        for(int i = 0; i < result.size(); i++) {
+            Object[] rows = new Object[7];
 
-                rows[0] = result.get(i).getMaLopHocPhan();
-                rows[1] = result.get(i).getMaMH();
-                rows[2] = result.get(i).getMaChuyenNganh();
-                rows[3] = result.get(i).getMaGiangVien();
-                rows[4] = result.get(i).getSiSo();
-                rows[5] = result.get(i).getHocKy();
-                rows[6] = result.get(i).getNamHoc();
+            rows[0] = result.get(i).getMaLopHocPhan();
+            rows[1] = result.get(i).getMaMH();
+            rows[2] = result.get(i).getMaChuyenNganh();
+            rows[3] = result.get(i).getMaGiangVien();
+            rows[4] = result.get(i).getSiSo();
+            rows[5] = result.get(i).getHocKy();
+            rows[6] = result.get(i).getNamHoc();
 
-                tableModelLopHP.addRow(rows);
-            }
+            tableModelLopHP.addRow(rows);
+        }
+        txtMaLop.setEnabled(true);
+        setButton(true);
+        setNull();
     }//GEN-LAST:event_btnTimKiemActionPerformed
 
 

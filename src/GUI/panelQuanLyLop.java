@@ -78,6 +78,7 @@ public class panelQuanLyLop extends javax.swing.JPanel {
         txtSiSo.setText("");
         txtKhoaHoc.setText("");
         txtMaLop.requestFocus();
+        txtTimKiem.setText("");
     }
     
     private void setButton(boolean a){
@@ -546,6 +547,9 @@ public class panelQuanLyLop extends javax.swing.JPanel {
 
             tableModelLop.addRow(rows);
             }
+            txtMaLop.setEnabled(true);
+            setButton(true);
+            setNull();
         }
     }//GEN-LAST:event_btnTimKiemMouseClicked
 

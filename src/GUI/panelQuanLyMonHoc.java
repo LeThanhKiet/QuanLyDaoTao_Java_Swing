@@ -83,6 +83,7 @@ public class panelQuanLyMonHoc extends javax.swing.JPanel {
         cmbChuyenNganh.setSelectedIndex(0);
         cmbHinhThucThi.setSelectedIndex(0);
         txtMaMH.requestFocus();
+        txtTimKiem.setText("");
     }
     
     private void setButton(boolean a){
@@ -586,7 +587,9 @@ public class panelQuanLyMonHoc extends javax.swing.JPanel {
 
             tableModelMonHoc.addRow(rows);
             }
-            txtTimKiem.setText("");
+            txtTimKiem.setEnabled(true);
+            setButton(true);
+            setNull();
         }
     }//GEN-LAST:event_btnTimKiemActionPerformed
 

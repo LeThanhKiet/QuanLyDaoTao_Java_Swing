@@ -97,6 +97,7 @@ public class panelQuanLyGiangVien extends javax.swing.JPanel {
         txtEmail.setText("");
         txtDiaChi.setText("");
         txtSDT.setText("");
+        txtTim.setText("");
     }
     
     private void setButton(boolean a) {
@@ -314,7 +315,7 @@ public class panelQuanLyGiangVien extends javax.swing.JPanel {
             }
         });
 
-        btnThem.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnThem.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnThem.setForeground(new java.awt.Color(0, 0, 0));
         btnThem.setText("Thêm");
         btnThem.addActionListener(new java.awt.event.ActionListener() {
@@ -618,6 +619,9 @@ public class panelQuanLyGiangVien extends javax.swing.JPanel {
             
             tblModelGV.addRow(rows);
         }
+        txtMaGV.setEnabled(true);
+        setButton(true);
+        setNull();
     }//GEN-LAST:event_btnTimActionPerformed
 
 
