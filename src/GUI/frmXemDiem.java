@@ -8,6 +8,7 @@ import Controller.controllerDiem;
 import javax.swing.table.DefaultTableModel;
 import java.sql.ResultSet;
 import javax.swing.ImageIcon;
+import javax.swing.JFrame;
 
 /**
  *
@@ -22,6 +23,7 @@ public class frmXemDiem extends javax.swing.JFrame {
     public frmXemDiem() {
         initComponents();
         this.setTitle("Xem điểm");
+        this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setIconImage(new ImageIcon(getClass().getResource("/Icon/EPUlogo.png")).getImage());
         this.setLocationRelativeTo(null);
         String[] rows = {"Mã Sinh Viên", "Tên Sinh Viên", "Tên Môn Học", "Mã Lớp Học Phần", "Điểm Thành Phần", "Điểm Cuối Kỳ", "Điểm Tổng Kết", "Xếp Loại", "Học Kỳ"};

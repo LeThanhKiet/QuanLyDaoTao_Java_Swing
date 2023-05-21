@@ -11,6 +11,7 @@ import Entity.Diem;
 import Entity.LopHocPhan;
 import java.util.List;
 import javax.swing.ImageIcon;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
@@ -30,6 +31,7 @@ public class frmNhapDiemSinhVien extends javax.swing.JFrame {
     public frmNhapDiemSinhVien() {
         initComponents();
         this.setLocationRelativeTo(null);
+        this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setIconImage(new ImageIcon(getClass().getResource("/Icon/EPUlogo.png")).getImage());
         setEnabledComponent();
         getComboBoxMaLopHocPhan();

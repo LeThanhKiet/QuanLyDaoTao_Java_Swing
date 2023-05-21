@@ -20,6 +20,7 @@ public class frmDoiMatKhau extends javax.swing.JFrame {
     public frmDoiMatKhau() {
         initComponents();
         this.setTitle("Đổi mật khẩu");
+        this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setIconImage(new ImageIcon(getClass().getResource("/Icon/EPUlogo.png")).getImage());
         this.setLocationRelativeTo(null);
     }
