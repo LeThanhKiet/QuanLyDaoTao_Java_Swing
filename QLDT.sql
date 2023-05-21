@@ -34,8 +34,8 @@ insert into tblNguoiDung values
 (N'SV07', 'sv07'),
 (N'SV08', 'sv08'),
 (N'SV09', 'sv09'),
-(N'SV010', 'sv10'),
-(N'SV011', 'sv011')
+(N'SV10', 'sv10'),
+(N'SV11', 'sv11')
 
 create table tblKhoa(
 	MaKhoa nvarchar(10) primary key not null,
