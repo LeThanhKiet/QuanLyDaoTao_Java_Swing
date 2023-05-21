@@ -182,6 +182,7 @@ public class frmMainSV extends javax.swing.JFrame {
         jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/taikhoan.png"))); // NOI18N
         jMenu3.setText("Tài Khoản");
 
+        menuItemTrangChu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_T, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         menuItemTrangChu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/Trangchu.png"))); // NOI18N
         menuItemTrangChu.setText("Trang Chủ");
         menuItemTrangChu.addActionListener(new java.awt.event.ActionListener() {
@@ -191,6 +192,7 @@ public class frmMainSV extends javax.swing.JFrame {
         });
         jMenu3.add(menuItemTrangChu);
 
+        MenuItemThongTin.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         MenuItemThongTin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/Thongtin.png"))); // NOI18N
         MenuItemThongTin.setText("Thông Tin Sinh Viên");
         MenuItemThongTin.addActionListener(new java.awt.event.ActionListener() {
@@ -200,6 +202,7 @@ public class frmMainSV extends javax.swing.JFrame {
         });
         jMenu3.add(MenuItemThongTin);
 
+        menuItemDMK.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         menuItemDMK.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/doimatkhau.png"))); // NOI18N
         menuItemDMK.setText("Đổi Mật Khẩu");
         menuItemDMK.addActionListener(new java.awt.event.ActionListener() {
@@ -209,6 +212,7 @@ public class frmMainSV extends javax.swing.JFrame {
         });
         jMenu3.add(menuItemDMK);
 
+        menuItemDangXuat.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         menuItemDangXuat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/dangxuat.png"))); // NOI18N
         menuItemDangXuat.setText("Đăng Xuất");
         menuItemDangXuat.addActionListener(new java.awt.event.ActionListener() {
@@ -218,6 +222,7 @@ public class frmMainSV extends javax.swing.JFrame {
         });
         jMenu3.add(menuItemDangXuat);
 
+        menuItemThoat.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         menuItemThoat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/thoat.png"))); // NOI18N
         menuItemThoat.setText("Thoát");
         menuItemThoat.addActionListener(new java.awt.event.ActionListener() {

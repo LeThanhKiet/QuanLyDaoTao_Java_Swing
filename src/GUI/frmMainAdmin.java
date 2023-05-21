@@ -260,6 +260,7 @@ public class frmMainAdmin extends javax.swing.JFrame {
         jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/quanlydaotao .png"))); // NOI18N
         jMenu1.setText("Quản Lý Đào Tạo");
 
+        menuItemQLSV.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
         menuItemQLSV.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/next2.png"))); // NOI18N
         menuItemQLSV.setText("Quản Lý Sinh Viên");
         menuItemQLSV.addActionListener(new java.awt.event.ActionListener() {
@@ -269,6 +270,7 @@ public class frmMainAdmin extends javax.swing.JFrame {
         });
         jMenu1.add(menuItemQLSV);
 
+        menuItemGV.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_G, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
         menuItemGV.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/next2.png"))); // NOI18N
         menuItemGV.setText("Quản Lý Giảng Viên");
         menuItemGV.addActionListener(new java.awt.event.ActionListener() {
@@ -278,6 +280,7 @@ public class frmMainAdmin extends javax.swing.JFrame {
         });
         jMenu1.add(menuItemGV);
 
+        menuItemDiem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
         menuItemDiem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/next2.png"))); // NOI18N
         menuItemDiem.setText("Quản Lý Điểm");
         menuItemDiem.addActionListener(new java.awt.event.ActionListener() {
@@ -287,6 +290,7 @@ public class frmMainAdmin extends javax.swing.JFrame {
         });
         jMenu1.add(menuItemDiem);
 
+        menuItemMH.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
         menuItemMH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/next2.png"))); // NOI18N
         menuItemMH.setText("Quản Lý Môn Học");
         menuItemMH.addActionListener(new java.awt.event.ActionListener() {

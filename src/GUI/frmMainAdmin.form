@@ -146,6 +146,9 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="menuItemQLSV">
               <Properties>
+                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                  <KeyStroke key="Shift+S"/>
+                </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/Icon/next2.png"/>
                 </Property>
@@ -157,6 +160,9 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="menuItemGV">
               <Properties>
+                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                  <KeyStroke key="Shift+G"/>
+                </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/Icon/next2.png"/>
                 </Property>
@@ -168,6 +174,9 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="menuItemDiem">
               <Properties>
+                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                  <KeyStroke key="Shift+D"/>
+                </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/Icon/next2.png"/>
                 </Property>
@@ -179,6 +188,9 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="menuItemMH">
               <Properties>
+                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                  <KeyStroke key="Shift+M"/>
+                </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/Icon/next2.png"/>
                 </Property>
