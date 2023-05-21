@@ -17,7 +17,7 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 /**
  *
- * @author Le Thanh Kiet
+ * @author I'm Fall
  */
 public class panelThongTinSinhVien extends javax.swing.JPanel {
 
