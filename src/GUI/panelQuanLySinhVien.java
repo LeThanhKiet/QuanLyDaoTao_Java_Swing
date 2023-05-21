@@ -209,18 +209,30 @@ public class panelQuanLySinhVien extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel1.setText("Họ Tên");
 
+        txtTenSV.setNextFocusableComponent(cmbMaLH);
+
+        txtMaSV.setNextFocusableComponent(txtTenSV);
+
         buttonGroupGioiTinh.add(rdNam);
         rdNam.setText("Nam");
+
+        cmbMaLH.setNextFocusableComponent(txtNgaySinh);
 
         jLabel9.setBackground(new java.awt.Color(51, 51, 255));
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel9.setText("Mã Lớp Học");
+
+        txtNgaySinh.setNextFocusableComponent(txtHeDaoTao);
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel10.setText("Số Điện Thoại");
 
         buttonGroupGioiTinh.add(rdNu);
         rdNu.setText("Nữ");
+
+        txtHeDaoTao.setNextFocusableComponent(txtDiaChi);
+
+        txtDiaChi.setNextFocusableComponent(txtSDT);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -573,7 +585,7 @@ public class panelQuanLySinhVien extends javax.swing.JPanel {
                 ctlNguoiDung.deleteData(txtMaSV.getText());
                 btnLamMoi.doClick();
             } else {
-                JOptionPane.showMessageDialog(null, "Xóa thất bại", "Thông báo", 1);
+                JOptionPane.showMessageDialog(null, "Xóa sinh viên không thành công vì còn lưu trữ điểm của sinh viên", "Thông báo", 1);
             }
         }
     }//GEN-LAST:event_btnXoaActionPerformed

@@ -136,6 +136,10 @@ public class panelQuanLyLop extends javax.swing.JPanel {
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
         jPanel2.setPreferredSize(new java.awt.Dimension(1082, 560));
 
+        txtSiSo.setNextFocusableComponent(txtKhoaHoc);
+
+        txtTenLop.setNextFocusableComponent(cmbChuyenNganh);
+
         txtMaLop.setName(""); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -149,6 +153,8 @@ public class panelQuanLyLop extends javax.swing.JPanel {
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel5.setText("Mã Chuyên Ngành");
+
+        cmbChuyenNganh.setNextFocusableComponent(txtSiSo);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel6.setText("Khóa học:");

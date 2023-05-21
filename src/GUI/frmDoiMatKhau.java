@@ -60,6 +60,12 @@ public class frmDoiMatKhau extends javax.swing.JFrame {
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/doimatkhau2.png"))); // NOI18N
         jLabel3.setText("Nhập lại mật khẩu:");
 
+        txtNhapLaiMatKhau.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtNhapLaiMatKhauKeyReleased(evt);
+            }
+        });
+
         btnThoat.setText("Thoát");
         btnThoat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -159,6 +165,14 @@ public class frmDoiMatKhau extends javax.swing.JFrame {
             changePassWord();
         }
     }//GEN-LAST:event_btnThayDoiKeyReleased
+
+    private void txtNhapLaiMatKhauKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNhapLaiMatKhauKeyReleased
+        // TODO add your handling code here:
+        if(evt.getKeyCode() == evt.VK_ENTER) {
+            changePassWord();
+        }
+               
+    }//GEN-LAST:event_txtNhapLaiMatKhauKeyReleased
     
     private void changePassWord() {
         String pass1 = txtMatKhauCu.getText();
@@ -174,15 +188,18 @@ public class frmDoiMatKhau extends javax.swing.JFrame {
             } else {
                 if(pass2.equals(pass3) == false) {
                     JOptionPane.showConfirmDialog(null, "Mật khẩu mới không trùng khớp \n Vui lòng nhập lại", "Thông báo", JOptionPane.DEFAULT_OPTION);
+                    txtMatKhauCu.requestFocus();
                     this.resetForm();
                 } else {
                     boolean check = controlNguoiDung.checkDoiMatKhau(frmLogin.nameLogin, pass2);
                     if(check) {
                         JOptionPane.showConfirmDialog(null, "Đổi mật khẩu thành công", "Thông báo", JOptionPane.DEFAULT_OPTION);
+                        txtMatKhauCu.requestFocus();
                         this.resetForm();
                     } else{
                         JOptionPane.showConfirmDialog(null, "Đổi mật khẩu thất bại \n Vui lòng kiểm tra lại", "Thông báo", JOptionPane.DEFAULT_OPTION);
                         this.resetForm();
+                        txtMatKhauCu.requestFocus();
                     }
                 }
             }

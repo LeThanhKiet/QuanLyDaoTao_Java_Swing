@@ -566,7 +566,7 @@ public class panelQuanLyMonHoc extends javax.swing.JPanel {
                 JOptionPane.showMessageDialog(null, "Xóa thành công", "Thông báo", 1);
                 btnLamMoi.doClick();
             } else {
-                JOptionPane.showMessageDialog(null, "Xóa thất bại", "Thông báo", 1);
+                JOptionPane.showMessageDialog(null, "Xóa thất bại vì còn thông tin của môn học liên quan đến điểm và nhiều thông tin khác", "Thông báo", 1);
             }
         }   
     }//GEN-LAST:event_btnXoaActionPerformed

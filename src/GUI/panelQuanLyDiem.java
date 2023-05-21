@@ -188,6 +188,16 @@ public class panelQuanLyDiem extends javax.swing.JPanel {
         jLabel19.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel19.setText("Mã Lớp Học Phần");
 
+        txtdiemCuoiKy.setNextFocusableComponent(txtDiemTongKet);
+
+        txtDiemThanhPhan.setNextFocusableComponent(txtdiemCuoiKy);
+
+        txtDiemTongKet.setNextFocusableComponent(txtXepLoai);
+
+        cmbMaSV.setNextFocusableComponent(cmbMaLopHP);
+
+        cmbMaLopHP.setNextFocusableComponent(txtDiemThanhPhan);
+
         jLabel20.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel20.setText("Xếp Loại");
 
@@ -523,16 +533,19 @@ public class panelQuanLyDiem extends javax.swing.JPanel {
 
     private void btnXoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoaActionPerformed
         // TODO add your handling code here:
-        List<SinhVien> listSinhVien = ctlSinhVien.getSinhVien();
-        String maSV = listSinhVien.get(cmbMaSV.getSelectedIndex()).getMaSV();
-        String maLopHP = cmbMaLopHP.getSelectedItem().toString();
-        boolean check = ctlDiem.deleteData(maSV, maLopHP);
-        if(check) {
-        JOptionPane.showMessageDialog(null, "Xóa điểm thành công", "Thông báo", 1);
-        btnLamMoi.doClick();
-        } else {
-            JOptionPane.showMessageDialog(null, "Xóa thất bại \nVui lòng kiểm tra lại thông tin", "Thông báo", 1);
-        }
+        int reply = JOptionPane.showConfirmDialog(null, "Bạn có muốn xoá điểm của sinh viên này không", "Thông báo", JOptionPane.YES_NO_OPTION);
+       if(reply == JOptionPane.YES_OPTION) {
+            List<SinhVien> listSinhVien = ctlSinhVien.getSinhVien();
+            String maSV = listSinhVien.get(cmbMaSV.getSelectedIndex()).getMaSV();
+            String maLopHP = cmbMaLopHP.getSelectedItem().toString();
+            boolean check = ctlDiem.deleteData(maSV, maLopHP);
+            if(check) {
+            JOptionPane.showMessageDialog(null, "Xóa điểm thành công", "Thông báo", 1);
+            btnLamMoi.doClick();
+            } else {
+                JOptionPane.showMessageDialog(null, "Xóa thất bại \nVui lòng kiểm tra lại thông tin", "Thông báo", 1);
+            }
+       }
     }//GEN-LAST:event_btnXoaActionPerformed
 
     private void btnLamMoiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLamMoiActionPerformed

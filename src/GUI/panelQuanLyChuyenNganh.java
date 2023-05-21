@@ -120,7 +120,10 @@ public class panelQuanLyChuyenNganh extends javax.swing.JPanel {
 
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
 
+        txtTenCN.setNextFocusableComponent(cboKhoa);
+
         txtMaCN.setName(""); // NOI18N
+        txtMaCN.setNextFocusableComponent(txtTenCN);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel2.setText("Mã Chuyên Ngành");

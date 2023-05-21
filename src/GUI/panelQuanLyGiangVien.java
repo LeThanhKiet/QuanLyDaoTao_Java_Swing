@@ -209,18 +209,32 @@ public class panelQuanLyGiangVien extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel1.setText("Họ Tên");
 
+        txtTenGV.setNextFocusableComponent(cboMaCN);
+
+        txtMaGV.setNextFocusableComponent(txtTenGV);
+
+        txtSDT.setNextFocusableComponent(btnThem);
+
         buttonGroupGioiTinh.add(rdNam);
         rdNam.setText("Nam");
+
+        cboMaCN.setNextFocusableComponent(txtNgaySinh);
 
         jLabel9.setBackground(new java.awt.Color(51, 51, 255));
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel9.setText("Chuyên ngành");
+
+        txtNgaySinh.setNextFocusableComponent(txtEmail);
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel10.setText("Số Điện Thoại");
 
         buttonGroupGioiTinh.add(rdNu);
         rdNu.setText("Nữ");
+
+        txtEmail.setNextFocusableComponent(txtDiaChi);
+
+        txtDiaChi.setNextFocusableComponent(txtSDT);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -308,6 +322,7 @@ public class panelQuanLyGiangVien extends javax.swing.JPanel {
         btnSua.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnSua.setText("Sửa");
         btnSua.setEnabled(false);
+        btnSua.setNextFocusableComponent(btnXoa);
         btnSua.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSuaActionPerformed(evt);
@@ -317,6 +332,7 @@ public class panelQuanLyGiangVien extends javax.swing.JPanel {
         btnThem.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnThem.setForeground(new java.awt.Color(0, 0, 0));
         btnThem.setText("Thêm");
+        btnThem.setNextFocusableComponent(btnSua);
         btnThem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnThemActionPerformed(evt);
@@ -327,6 +343,7 @@ public class panelQuanLyGiangVien extends javax.swing.JPanel {
         btnXoa.setText("Xóa");
         btnXoa.setEnabled(false);
         btnXoa.setIconTextGap(2);
+        btnXoa.setNextFocusableComponent(btnLamMoi);
         btnXoa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnXoaActionPerformed(evt);

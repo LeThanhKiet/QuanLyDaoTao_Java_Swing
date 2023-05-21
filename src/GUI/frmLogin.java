@@ -60,6 +60,7 @@ public class frmLogin extends javax.swing.JFrame {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/password.png"))); // NOI18N
         jLabel2.setText("Mật Khẩu:");
 
+        txtMatKhau.setNextFocusableComponent(rdAdmin);
         txtMatKhau.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtMatKhauKeyReleased(evt);
@@ -69,16 +70,20 @@ public class frmLogin extends javax.swing.JFrame {
         groupRadio.add(rdAdmin);
         rdAdmin.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         rdAdmin.setText("Admin");
+        rdAdmin.setNextFocusableComponent(rdGiangVien);
 
         groupRadio.add(rdGiangVien);
         rdGiangVien.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         rdGiangVien.setText("Giảng viên");
+        rdGiangVien.setNextFocusableComponent(rdSinhVien);
 
         groupRadio.add(rdSinhVien);
         rdSinhVien.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         rdSinhVien.setText("Sinh viên");
+        rdSinhVien.setNextFocusableComponent(btnDangNhap);
 
         btnDangNhap.setText("Đăng Nhập");
+        btnDangNhap.setNextFocusableComponent(btnThoat);
         btnDangNhap.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDangNhapActionPerformed(evt);
@@ -216,6 +221,7 @@ public class frmLogin extends javax.swing.JFrame {
         // TODO add your handling code here:
         if(rdAdmin.isSelected() == false && rdGiangVien.isSelected() == false && rdSinhVien.isSelected() == false) {
             JOptionPane.showConfirmDialog(null, "Chưa chọn đối tượng đăng nhập", "Thông báo", JOptionPane.DEFAULT_OPTION);
+            txtTaiKhoan.requestFocus();
             this.resetForm();
         } else {
             Login();
@@ -232,7 +238,13 @@ public class frmLogin extends javax.swing.JFrame {
     private void txtMatKhauKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtMatKhauKeyReleased
         // TODO add your handling code here:
         if(evt.getKeyCode() == evt.VK_ENTER) {
-            btnDangNhap.doClick();
+            if(rdAdmin.isSelected() == false && rdGiangVien.isSelected() == false && rdSinhVien.isSelected() == false) {
+                JOptionPane.showConfirmDialog(null, "Chưa chọn đối tượng đăng nhập", "Thông báo", JOptionPane.DEFAULT_OPTION);
+                txtTaiKhoan.requestFocus();
+                this.resetForm();
+            } else {
+                Login();
+            }  
         }
     }//GEN-LAST:event_txtMatKhauKeyReleased
    
