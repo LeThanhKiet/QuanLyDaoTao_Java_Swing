@@ -30,6 +30,7 @@ public class frmNhapDiemSinhVien extends javax.swing.JFrame {
      */
     public frmNhapDiemSinhVien() {
         initComponents();
+        this.setTitle("Làm việc với điểm sinh viên " + tenGiangVien);
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setIconImage(new ImageIcon(getClass().getResource("/Icon/EPUlogo.png")).getImage());
@@ -57,6 +58,14 @@ public class frmNhapDiemSinhVien extends javax.swing.JFrame {
         txtTenSinhVien.setEnabled(false);
         txtDiemTK.setEnabled(false);
         txtXepLoai.setEnabled(false);
+    }
+    
+    private void setNull() {
+        txtTenSinhVien.setText("");
+        txtDiemTP.setText("");
+        txtDiemCK.setText("");
+        txtDiemTK.setText("");
+        txtXepLoai.setText("");
     }
     
     private void getComboBoxMaLopHocPhan() {
@@ -531,7 +540,8 @@ public class frmNhapDiemSinhVien extends javax.swing.JFrame {
         // TODO add your handling code here:    
         clearDataTable();
         getDataTable(cboMaLopHP.getSelectedItem().toString());
-        cboMaSV.setSelectedIndex(0);   
+        cboMaSV.setSelectedIndex(-1);  
+        this.setNull();
     }//GEN-LAST:event_btnLamMoiActionPerformed
 
     private void cboMaSVItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cboMaSVItemStateChanged
