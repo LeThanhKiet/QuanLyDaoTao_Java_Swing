@@ -13,6 +13,7 @@ import java.util.Locale;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.Timer;
 import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 
@@ -352,8 +353,7 @@ public class frmMainAdmin extends javax.swing.JFrame {
         // TODO add your handling code here:
         panelQuanLyKhoa khoa = new panelQuanLyKhoa();
         tabContent.removeAll();
-        tabContent.add("Quản lý khoa", khoa);
-        
+        tabContent.add("Quản lý khoa", khoa);  
     }//GEN-LAST:event_menuItemQLKActionPerformed
 
     private void menuItemTrangChuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemTrangChuActionPerformed
